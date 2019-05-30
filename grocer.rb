@@ -9,7 +9,7 @@ def consolidate_cart(cart)
      consolidated[name] = {}
      consolidated[name][:price] = info[:price]
      consolidated[name][:clearance] = info[:clearance]
-     consolidated[name][:count] = cart.count{}|k,v| k == name}
+     consolidated[name][:count] = cart.count{|k,v| k == name}
   end
   consolidated
 
