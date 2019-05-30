@@ -13,7 +13,7 @@ def consolidate_cart(cart)
   # puts cart.inspect, "", new_cart.inspect
   # new_cart
 
-  items.each do |item|
+  puts items
 
 end
 
