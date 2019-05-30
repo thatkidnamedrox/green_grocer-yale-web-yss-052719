@@ -20,7 +20,7 @@ def consolidate_cart(cart)
     consolidated[name] = {}
   end
 
-  puts cart
+  puts cart, "", consolidated
 
 end
 
