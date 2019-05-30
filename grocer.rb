@@ -60,6 +60,6 @@ def checkout(cart, coupons)
   puts "CLEARANCE_APPLIED" + "\n\t" + clearance_applied.inspect
 
   total = 0.0
-  clearance_applied.each {|item, info| total += info[:price]}
+  consolidated.each {|item, info| total += info[:price]}
   total
 end
