@@ -1,7 +1,8 @@
 def consolidate_cart(cart)
   # code here
   puts cart, ""
-  items = cart.uniq
+  consolidated = cart.uniq
+  puts consolidated, ""
   new_cart = {}
   items.each do |item|
     name = item.keys[0]
