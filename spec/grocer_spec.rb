@@ -54,9 +54,8 @@ describe "Grocer" do
         @avocado_coupon = coupons.find { |coupon| coupon[:item] == "AVOCADO" }
         @cart = [@avocado, @avocado]
         @consolidated_cart = consolidate_cart(@cart)
-        #puts @consolidated_cart, ""
         @avocado_result = apply_coupons(@consolidated_cart, [@avocado_coupon])
-        puts @avocado_result, "", @consolidated_cart
+        
       end
 
       it "adds a new key, value pair to the cart hash called 'ITEM NAME W/COUPON'" do
