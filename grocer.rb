@@ -11,6 +11,7 @@ def consolidate_cart(cart)
      consolidated[name][:clearance] = info[:clearance]
      consolidated[name][:count] = cart.count{|food| food == item}
   end
+  puts cart, "", consolidated
   consolidated
 
 end
