@@ -57,7 +57,7 @@ end
 
 def checkout(cart, coupons)
   # code here
-  #puts "CART" + "\n\t" + cart.inspect
+  puts cart
   #puts "COUPONS"  + "\n\t" + coupons.inspect
   consolidated = consolidate_cart(cart)
   #puts "CONSOLIDATED"  + "\n\t" + consolidated.inspect
