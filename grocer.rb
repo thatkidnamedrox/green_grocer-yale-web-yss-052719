@@ -4,7 +4,7 @@ def consolidate_cart(cart)
   consolidated = cart.uniq
   puts consolidated, ""
   new_cart = {}
-  items.each do |item|
+  consolidated.each do |item|
     name = item.keys[0]
     info = item.values[0]
     info[:count] = cart.count(item)
