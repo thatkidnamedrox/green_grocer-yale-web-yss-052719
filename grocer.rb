@@ -41,7 +41,7 @@ def apply_coupons(cart, coupons)
   end
   coupon_items = coupons.map {|coupon| coupon[:item]}
   cart.each do |item|
-    
+
   coupons_applied == {} ? cart : coupons_applied
 end
 
