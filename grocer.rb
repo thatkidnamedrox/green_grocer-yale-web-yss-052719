@@ -41,6 +41,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:price] = cart[item][:price]
     coupons_applied[item][:clearance] = cart[item][:clearance]
     coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
+    
     if coupons_applied[item][:count] >= coupon[:num]
       puts "applied", cart[item][:count], coupon[:num]
       coupons_applied[item_coupon] ||= {}
