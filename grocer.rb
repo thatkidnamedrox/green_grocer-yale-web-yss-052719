@@ -17,9 +17,10 @@ def consolidate_cart(cart)
 
   consolidated = {}
   items.map do |item|
-    puts item.keys
+     name = item.keys.first
+     consolidated[name] = {}
   end
-
+  puts consolidated
   #puts cart, "", consolidated
 
 end
