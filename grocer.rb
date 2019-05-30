@@ -43,20 +43,20 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  # # code here
-  # discount = 0.2
-  # clearance_applied = {}
-  # cart.each do |item, info|
-  #   clearance_applied[item] = {}
-  #   clearance_applied[item][:price] = info[:price]
-  #   clearance_applied[item][:clearance] = info[:clearance]
-  #   clearance_applied[item][:count] = info[:count]
-  #
-  #   info[:clearance] ? clearance_applied[item][:price] *= (1.0 - discount) : nil
-  #   clearance_applied[item][:price] = clearance_applied[item][:price].round(1)
-  # end
-  # #puts clearance_applied, "", cart
-  # clearance_applied
+  # code here
+  discount = 0.2
+  clearance_applied = {}
+  cart.each do |item, info|
+    clearance_applied[item] = {}
+    clearance_applied[item][:price] = info[:price]
+    clearance_applied[item][:clearance] = info[:clearance]
+    clearance_applied[item][:count] = info[:count]
+  
+    info[:clearance] ? clearance_applied[item][:price] *= (1.0 - discount) : nil
+    clearance_applied[item][:price] = clearance_applied[item][:price].round(1)
+  end
+  #puts clearance_applied, "", cart
+  clearance_applied
 end
 
 def checkout(cart, coupons)
