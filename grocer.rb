@@ -20,8 +20,10 @@ def consolidate_cart(cart)
      name = item.keys.first
      info = item.values.first
      consolidated[name] = {}
-     consolidated[name][:count] = 0
      consolidated[name][:price] = info[:price]
+     consolidated[name][:clearance] = info[:clearance]
+     consolidated[name][:count] = 0
+     
 
   end
   puts consolidated, "", cart
