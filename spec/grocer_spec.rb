@@ -55,7 +55,7 @@ describe "Grocer" do
         @cart = [@avocado, @avocado]
         @consolidated_cart = consolidate_cart(@cart)
         @avocado_result = apply_coupons(@consolidated_cart, [@avocado_coupon])
-        
+
       end
 
       it "adds a new key, value pair to the cart hash called 'ITEM NAME W/COUPON'" do
