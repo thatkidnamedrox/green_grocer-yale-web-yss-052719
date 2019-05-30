@@ -78,6 +78,6 @@ def checkout(cart, coupons)
   clearance_applied = apply_clearance(coupons_applied)
   puts cart, "", consolidated, "", coupons, coupons_applied, "", clearance_applied
   total = 0.0
-  clearance_applied.each {|item, info| total += info[:price] * info[:count]}
+  clearance_applied.each {|item, info| total += info[:price] * info[:count].clamp(0, 10000000)}
   total
 end
