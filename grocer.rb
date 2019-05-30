@@ -32,7 +32,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[item_coupon][:count] ? nil : coupons_applied[item_coupon][:count] = 0
     coupons_applied[item_coupon][:count] += 1
 
-    coupons_applied[item] = {}
+    coupons_applied[item] ||= {}
     coupons_applied[item][:price] = cart[item][:price]
     coupons_applied[item][:clearance] = cart[item][:clearance]
     coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
