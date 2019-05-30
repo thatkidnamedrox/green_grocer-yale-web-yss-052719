@@ -20,7 +20,7 @@ def consolidate_cart(cart)
      name = item.keys.first
      consolidated[name] = {}
   end
-  puts consolidated
+  puts consolidated, "", cart
   #puts cart, "", consolidated
 
 end
