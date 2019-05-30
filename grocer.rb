@@ -57,21 +57,21 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # code here
-  #puts "CART", cart, ""
-  #puts "COUPONS"  + "\n\t" + coupons.inspect
-  consolidated = consolidate_cart(cart)
-  puts "", cart, "", consolidated
-  #puts "CONSOLIDATED", consolidated, ""
-  #puts "CONSOLIDATED"  + "\n\t" + consolidated.inspect
-  # # # #puts consolidated.inspect
-  coupons_applied = apply_coupons(consolidated, coupons)
-  # puts "COUPONS_APPLIED" + "\n\t" + coupons_applied.inspect
-  # # # #puts consolidated.inspect
-  clearance_applied = apply_clearance(coupons_applied)
-  # puts "CLEARANCE_APPLIED" + "\n\t" + clearance_applied.inspect
-  #
-  total = 0.0
-  clearance_applied.each {|item, info| total += info[:price]}
-  total
+  # # code here
+  # #puts "CART", cart, ""
+  # #puts "COUPONS"  + "\n\t" + coupons.inspect
+  # consolidated = consolidate_cart(cart)
+  # puts "", cart, "", consolidated
+  # #puts "CONSOLIDATED", consolidated, ""
+  # #puts "CONSOLIDATED"  + "\n\t" + consolidated.inspect
+  # # # # #puts consolidated.inspect
+  # coupons_applied = apply_coupons(consolidated, coupons)
+  # # puts "COUPONS_APPLIED" + "\n\t" + coupons_applied.inspect
+  # # # # #puts consolidated.inspect
+  # clearance_applied = apply_clearance(coupons_applied)
+  # # puts "CLEARANCE_APPLIED" + "\n\t" + clearance_applied.inspect
+  # #
+  # total = 0.0
+  # clearance_applied.each {|item, info| total += info[:price]}
+  # total
 end
