@@ -3,15 +3,15 @@ def consolidate_cart(cart)
   #puts cart, ""
   items = cart.uniq
   #puts consolidated, ""
-  new_cart = {}
-  items.each do |item|
-    name = item.keys[0]
-    info = item.values[0]
-    info[:count] = cart.count(item)
-    new_cart[name] = info
-  end
-  puts cart.inspect, "", new_cart.inspect
-  new_cart
+  # new_cart = {}
+  # items.each do |item|
+  #   name = item.keys[0]
+  #   info = item.values[0]
+  #   info[:count] = cart.count(item)
+  #   new_cart[name] = info
+  # end
+  # puts cart.inspect, "", new_cart.inspect
+  # new_cart
 end
 
 def apply_coupons(cart, coupons)
