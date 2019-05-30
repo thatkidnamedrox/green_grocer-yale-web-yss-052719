@@ -1,17 +1,17 @@
 def consolidate_cart(cart)
   # code here
-  puts cart, ""
-  consolidated = cart.uniq
-  puts consolidated, ""
+  #puts cart, ""
+  items = cart.uniq
+  #puts consolidated, ""
   new_cart = {}
-  consolidated.each do |item|
+  items.each do |item|
     name = item.keys[0]
     info = item.values[0]
     info[:count] = cart.count(item)
     new_cart[name] = info
   end
   cart = new_cart
-  puts cart
+  #puts cart
   cart
 end
 
