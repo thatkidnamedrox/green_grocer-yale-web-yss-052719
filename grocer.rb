@@ -21,6 +21,16 @@ def apply_coupons(cart, coupons)
   #puts cart
   coupons_applied = {}
   #coupons_applied = cart.select
+  coupon_items = coupons.map {|coupon| coupon[:item]}
+  cart.each do |item, info|
+    if !coupon_items.find{|k,v| k == item}
+      coupons_applied[item] ||= {}
+      coupons_applied[item][:price] = cart[item][:price]
+      coupons_applied[item][:clearance] = cart[item][:clearance]
+      coupons_applied[item][:count] = cart[item][:count]
+    end
+  end
+  
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
@@ -39,15 +49,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
     coupons_applied[item][:count] -= coupon[:num]
   end
-  coupon_items = coupons.map {|coupon| coupon[:item]}
-  cart.each do |item, info|
-    if !coupon_items.find{|k,v| k == item}
-      coupons_applied[item] ||= {}
-      coupons_applied[item][:price] = cart[item][:price]
-      coupons_applied[item][:clearance] = cart[item][:clearance]
-      coupons_applied[item][:count] = cart[item][:count]
-    end
-  end
+  
 
   coupons_applied == {} ? cart : coupons_applied
 end
