@@ -30,7 +30,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[:price] = coupon[:cost]
     coupons_applied[:clearance] = cart[item][:clearance]
   end
-  
+  coupons_applied
 end
 
 def apply_clearance(cart)
