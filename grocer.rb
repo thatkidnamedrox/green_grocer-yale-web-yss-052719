@@ -11,13 +11,14 @@ def consolidate_cart(cart)
      consolidated[name][:clearance] = info[:clearance]
      consolidated[name][:count] = cart.count{|food| food == item}
   end
-  puts cart, "", consolidated
+  #puts cart, "", consolidated
   consolidated
 
 end
 
 def apply_coupons(cart, coupons)
   # code here
+  puts cart
   coupons_applied = {}
   coupons_applied = coupons_applied.merge(cart)
   coupons.each do |coupon|
