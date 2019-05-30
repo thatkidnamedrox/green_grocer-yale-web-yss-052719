@@ -49,6 +49,8 @@ def apply_clearance(cart)
     info[:clearance] ? info[:price] *= (1.0 - discount) : nil
     info[:price] = info[:price].round(1)
   end
+  puts clearance_applied
+  clearance_applied
 end
 #
 # def checkout(cart, coupons)
