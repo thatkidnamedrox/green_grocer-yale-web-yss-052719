@@ -24,14 +24,14 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
-    
+
     item_coupon = "#{item} W/COUPON"
-  
+
     coupons_applied[item_coupon] ? nil : coupons_applied[item_coupon] = {}
     # coupons_applied[item_coupon][:price] = coupon[:cost]
     # coupons_applied[item_coupon][:clearance] = cart[item][:clearance]
     # coupons_applied[item_coupon][:count] ? coupons_applied[item_coupon][:count] += 1 : coupons_applied[item_coupon][:count] = 1
-    # 
+    #
     # coupons_applied[item][:count] = cart[item][:count] - coupon[:num]
     # coupons_applied[item][:count]
   end
