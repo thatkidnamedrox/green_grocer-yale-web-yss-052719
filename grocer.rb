@@ -32,7 +32,6 @@ def apply_coupons(cart, coupons)
       cart[new_item][:count] = 1
     end
   end
-  puts cart
   cart
 
 end
