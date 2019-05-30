@@ -42,6 +42,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:clearance] = cart[item][:clearance]
 
     if cart[item][:count] >= coupon[:num]
+      puts "applied"
       coupons_applied[item_coupon] ||= {}
       coupons_applied[item_coupon][:price] = coupon[:cost]
       coupons_applied[item_coupon][:clearance] = cart[item][:clearance]
