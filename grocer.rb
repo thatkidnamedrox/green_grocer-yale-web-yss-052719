@@ -30,7 +30,7 @@ def apply_coupons(cart, coupons)
       coupons_applied[item][:count] = cart[item][:count]
     end
   end
-
+  
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
@@ -49,7 +49,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
     coupons_applied[item][:count] -= coupon[:num]
   end
-
+  
   coupons_applied == {} ? cart : coupons_applied
 end
 
@@ -86,6 +86,6 @@ def checkout(cart, coupons)
   # puts "CLEARANCE_APPLIED" + "\n\t" + clearance_applied.inspect
   #
   total = 0.0
-  clearance_applied.each {|item, info| total += info[:price]}
+  clearance_applied.each {|item, info| total += info[:price] * info[:count]}
   total
 end
