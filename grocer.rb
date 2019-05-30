@@ -39,7 +39,9 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
     coupons_applied[item][:count] -= coupon[:num]
   end
-
+  coupon_items = coupons.map {|coupon| coupon[:item]}
+  cart.each do |item|
+    
   coupons_applied == {} ? cart : coupons_applied
 end
 
