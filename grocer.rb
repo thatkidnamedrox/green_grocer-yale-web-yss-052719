@@ -84,5 +84,7 @@ def checkout(cart, coupons)
   #puts cart, "", consolidated, "", coupons, coupons_applied, "", clearance_applied
   total = 0.0
   clearance_applied.each {|item, info| total += info[:price] * info[:count].clamp(0, 10000000)}
-  total
+
+  discount = 0.1
+  total > 100 ? total *= (1.0 - discount) : total
 end
