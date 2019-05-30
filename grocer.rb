@@ -28,19 +28,8 @@ def apply_coupons(cart, coupons)
     coupons_applied[name] ? nil : coupons_applied[name] = {}
     coupons_applied[:price] = coupon[:cost]
     coupons_applied[:clearance] = cart[item][:clearance]
-    coupons_applied[name][:count] = cart[item][:count] - coupon[:num]
-    #
-    # new_item = item + " W/COUPON"
-    # cart[new_item] ? nil : cart[new_item] = {}
-    # cart[new_item][:price] = coupon[:cost]
-    # cart[new_item][:clearance] = cart[item][:clearance]
-    # if cart[new_item][:count]
-    #   cart[new_item][:count] += 1
-    # else
-    #   cart[new_item][:count] = 1
-    # end
   end
-  cart
+  coupons_applied
 end
 
 def apply_clearance(cart)
