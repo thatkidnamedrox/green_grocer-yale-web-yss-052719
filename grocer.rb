@@ -18,6 +18,7 @@ end
 def apply_coupons(cart, coupons)
   # code here
   coupons_applied = {}
+  coupons_applied = coupons_applied.merge(cart)
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
@@ -29,7 +30,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[:price] = coupon[:cost]
     coupons_applied[:clearance] = cart[item][:clearance]
   end
-  coupons_applied
+  
 end
 
 def apply_clearance(cart)
