@@ -14,7 +14,7 @@ def consolidate_cart(cart)
   # new_cart
 
   items.each do |item|
-    
+
 end
 
 # def apply_coupons(cart, coupons)
@@ -23,7 +23,7 @@ end
 #     item = coupon[:item]
 #     cart[item] ? nil : break
 #     cart[item][:count] -= coupon[:num]
-# 
+#
 #     new_item = item + " W/COUPON"
 #     cart[new_item] ? nil : cart[new_item] = {}
 #     cart[new_item][:price] = coupon[:cost]
@@ -35,9 +35,9 @@ end
 #     end
 #   end
 #   cart
-# 
+#
 # end
-# 
+#
 # def apply_clearance(cart)
 #   # code here
 #   discount = 0.2
@@ -47,7 +47,7 @@ end
 #     info[:price] = info[:price].round(1)
 #   end
 # end
-# 
+#
 # def checkout(cart, coupons)
 #   # code here
 #   # puts "CART" + "\n\t" + cart.inspect
