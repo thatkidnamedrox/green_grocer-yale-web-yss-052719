@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:count] = cart[item][:count] - coupon[:num]
     coupons_applied[item][:count].clamp(0,10000000)
   end
-  puts coupons_applied
+  puts coupons_applied, "", cart
   coupons_applied
 end
 
