@@ -34,6 +34,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
+    puts cart[item][:count,  coupon[:num]
     cart[item][:count] < coupon[:num] ? nil : break
 
     item_coupon = "#{item} W/COUPON"
