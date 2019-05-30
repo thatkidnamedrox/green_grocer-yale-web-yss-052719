@@ -37,6 +37,10 @@ def apply_coupons(cart, coupons)
 
     item_coupon = "#{item} W/COUPON"
 
+    coupons_applied[item] ||= {}
+    coupons_applied[item][:price] = cart[item][:price]
+    coupons_applied[item][:clearance] = cart[item][:clearance]
+
     if cart[item][:count] >= coupon[:num]
       coupons_applied[item_coupon] ||= {}
       coupons_applied[item_coupon][:price] = coupon[:cost]
@@ -50,10 +54,7 @@ def apply_coupons(cart, coupons)
       coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
       coupons_applied[item][:count] -= coupon[:num]
     else
-      coupons_applied[item] ||= {}
-      coupons_applied[item][:price] = cart[item][:price]
-      coupons_applied[item][:clearance] = cart[item][:clearance]
-      coupons_applied[item][:count] = cart[item][:count]
+      
     end
 
   end
