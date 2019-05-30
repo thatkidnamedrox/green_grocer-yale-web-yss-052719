@@ -23,10 +23,10 @@ def apply_coupons(cart, coupons)
     item = coupon[:item]
     cart[item] ? nil : break
 
-    name = "#{item} W/COUPON"
+    item_coupon = "#{item} W/COUPON"
     info = cart[item]
 
-    coupons_applied[name] ? nil : coupons_applied[name] = {}
+    coupons_applied[item_coupon] ? nil : coupons_applied[item_coupon] = {}
     coupons_applied[:price] = coupon[:cost]
     coupons_applied[:clearance] = cart[item][:clearance]
   end
