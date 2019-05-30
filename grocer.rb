@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
   # code here
   #puts cart
   coupons_applied = {}
-  coupons_applied = coupons_applied
+  coupons_applied = {}
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
