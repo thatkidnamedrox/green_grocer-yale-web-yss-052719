@@ -18,7 +18,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  puts consolidated_cart(cart)
+  puts consolidate_cart(cart)
   coupons_applied = {}
   coupons_applied = coupons_applied.merge(cart)
   coupons.each do |coupon|
