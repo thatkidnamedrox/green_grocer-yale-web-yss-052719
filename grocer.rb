@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
-    
+
     item_coupon = "#{item} W/COUPON"
 
     if cart[item][:count] >= coupon[:num]
@@ -55,7 +55,7 @@ def apply_coupons(cart, coupons)
       coupons_applied[item][:clearance] = cart[item][:clearance]
       coupons_applied[item][:count] = cart[item][:count]
     end
-    
+
   end
 
   coupons_applied == {} ? cart : coupons_applied
