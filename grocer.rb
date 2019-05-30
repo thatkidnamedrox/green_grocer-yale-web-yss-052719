@@ -22,7 +22,7 @@ def consolidate_cart(cart)
      consolidated[name] = {}
      consolidated[name][:price] = info[:price]
      consolidated[name][:clearance] = info[:clearance]
-     consolidated[name][:count] = 0
+     consolidated[name][:count] = cart.count(item)
 
 
   end
