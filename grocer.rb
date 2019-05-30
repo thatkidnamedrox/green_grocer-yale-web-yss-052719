@@ -15,6 +15,11 @@ def consolidate_cart(cart)
 
   puts items
 
+  items.map do |item|
+    item[:count] = 0
+  end
+  puts items
+
 end
 
 # def apply_coupons(cart, coupons)
