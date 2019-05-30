@@ -27,8 +27,9 @@ def apply_coupons(cart, coupons)
     info = cart[item]
 
     coupons_applied[item_coupon] ? nil : coupons_applied[item_coupon] = {}
-    coupons_applied[:price] = coupon[:cost]
-    coupons_applied[:clearance] = cart[item][:clearance]
+    coupons_applied[item_coupon][:price] = coupon[:cost]
+    coupons_applied[item_coupon][:clearance] = cart[item][:clearance]
+    coupons_applied[item_coupon][:count] ? coupons_applied[item_coupon][:count] += 1 : coupons_applied[item_coupon][:count] += 0
   end
   puts coupons_applied
   coupons_applied
