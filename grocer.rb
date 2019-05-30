@@ -50,10 +50,7 @@ def apply_coupons(cart, coupons)
       coupons_applied[item_coupon][:count] ? nil : coupons_applied[item_coupon][:count] = 0
       coupons_applied[item_coupon][:count] += 1
 
-      #coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
       coupons_applied[item][:count] -= coupon[:num]
-    else
-      coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
     end
 
   end
