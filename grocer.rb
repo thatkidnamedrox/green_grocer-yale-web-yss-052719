@@ -20,7 +20,7 @@ def consolidate_cart(cart)
     puts item
   end
 
-  puts cart, "", consolidated
+  #puts cart, "", consolidated
 
 end
 
