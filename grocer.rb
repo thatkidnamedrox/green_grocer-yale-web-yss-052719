@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
   # code here
   #puts cart
   coupons_applied = {}
-  coupons_applied = cart
+  #coupons_applied = cart.select
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
@@ -39,8 +39,8 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
     coupons_applied[item][:count] -= coupon[:num]
   end
-  coupons_applied
-  #coupons_applied == {} ? cart : coupons_applied
+  
+  coupons_applied == {} ? cart : coupons_applied
 end
 
 def apply_clearance(cart)
