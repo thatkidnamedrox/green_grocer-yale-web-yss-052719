@@ -20,10 +20,10 @@ def apply_coupons(cart, coupons)
   coupons_applied = {}
   coupons.each do |coupon|
     item = coupon[:item]
-    puts item
-    #cart[item] ? nil : break
+    cart[item] ? nil : break
 
-    # name = item.keys.first
+    name = "#{item} W/COUPON"
+    info = cart[item]
     #
     # info = item.values.first
     #
