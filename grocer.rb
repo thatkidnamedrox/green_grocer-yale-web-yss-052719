@@ -47,7 +47,7 @@ end
 #     info[:price] = info[:price].round(1)
 #   end
 # end
-# 
+#
 # def checkout(cart, coupons)
 #   # code here
 #   puts "CART" + "\n\t" + cart.inspect
