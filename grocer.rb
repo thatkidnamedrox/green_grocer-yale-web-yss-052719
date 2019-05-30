@@ -43,11 +43,9 @@ def apply_clearance(cart)
   discount = 0.2
   clearance_applied = {}
   cart.each do |item, info|
-    #puts info.inspect
     clearance_applied[item] = {}
     clearance_applied[item][:price] = info[:price]
     info[:clearance] ? clearance_applied[item][:price] *= (1.0 - discount) : nil
-    #info[:clearance] ? info[:price] *= (1.0 - discount) : nil
     clearance_applied[item][:price] = clearance_applied[item][:price].round(1)
   end
   puts clearance_applied
