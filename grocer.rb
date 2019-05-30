@@ -40,7 +40,14 @@ def apply_coupons(cart, coupons)
     coupons_applied[item][:count] -= coupon[:num]
   end
   coupon_items = coupons.map {|coupon| coupon[:item]}
-  cart.each do |item|
+  cart.each do |item, info|
+    if !coupon_items.find{|k,v| k == item}
+      coupons_applied[item] ||= {}
+      coupons_applied[item][:price] = cart[item][:price]
+      coupons_applied[item][:clearance] = cart[item][:clearance]
+      coupons_applied[item][:count] = cart[item][:count]
+    end
+  end
 
   coupons_applied == {} ? cart : coupons_applied
 end
