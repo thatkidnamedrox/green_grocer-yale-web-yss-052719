@@ -23,11 +23,9 @@ def consolidate_cart(cart)
      consolidated[name][:price] = info[:price]
      consolidated[name][:clearance] = info[:clearance]
      consolidated[name][:count] = cart.count(item)
-
-
   end
-  puts consolidated, "", cart
-  #puts cart, "", consolidated
+  #puts consolidated, "", cart
+  consolidated
 
 end
 
