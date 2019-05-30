@@ -10,6 +10,7 @@ def consolidate_cart(cart)
     info[:count] = cart.count(item)
     new_cart[name] = info
   end
+  puts cart.inspect, "", new_cart.inspect
   new_cart
 end
 
