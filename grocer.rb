@@ -21,6 +21,7 @@ def consolidate_cart(cart)
      info = item.values.first
      consolidated[name] = {}
      consolidated[name] = info
+     consolidated[name][:count] = 0
   end
   puts consolidated, "", cart
   #puts cart, "", consolidated
