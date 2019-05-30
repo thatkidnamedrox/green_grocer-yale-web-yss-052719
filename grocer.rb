@@ -22,23 +22,24 @@ def apply_coupons(cart, coupons)
     item = coupon[:item]
     cart[item] ? nil : break
 
-    name = item.keys.first
-    info = item.values.first
-
-    coupons_applied[name] = {}
-    coupons_applied[name][:count] = cart[name][:count] - coupon[:num]
-
-    new_item = item + " W/COUPON"
-    cart[new_item] ? nil : cart[new_item] = {}
-    cart[new_item][:price] = coupon[:cost]
-    cart[new_item][:clearance] = cart[item][:clearance]
-    if cart[new_item][:count]
-      cart[new_item][:count] += 1
-    else
-      cart[new_item][:count] = 1
-    end
+    # name = item.keys.first
+    # 
+    # info = item.values.first
+    # 
+    # coupons_applied[name] = {}
+    # coupons_applied[name][:count] = cart[name][:count] - coupon[:num]
+    # 
+    # new_item = item + " W/COUPON"
+    # cart[new_item] ? nil : cart[new_item] = {}
+    # cart[new_item][:price] = coupon[:cost]
+    # cart[new_item][:clearance] = cart[item][:clearance]
+    # if cart[new_item][:count]
+    #   cart[new_item][:count] += 1
+    # else
+    #   cart[new_item][:count] = 1
+    # end
   end
-  cart
+  # cart
 end
 
 def apply_clearance(cart)
