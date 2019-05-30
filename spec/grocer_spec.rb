@@ -54,7 +54,7 @@ describe "Grocer" do
         @avocado_coupon = coupons.find { |coupon| coupon[:item] == "AVOCADO" }
         @cart = [@avocado, @avocado]
         @consolidated_cart = consolidate_cart(@cart)
-        puts @consolidated_cart
+        puts @consolidated_cart, "", @cart
         @avocado_result = apply_coupons(@consolidated_cart, [@avocado_coupon])
       end
 
