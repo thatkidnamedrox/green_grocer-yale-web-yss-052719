@@ -1,5 +1,6 @@
 def consolidate_cart(cart)
   # code here
+  puts cart
   items = cart.uniq
   new_cart = {}
   items.each do |item|
