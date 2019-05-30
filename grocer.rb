@@ -15,10 +15,11 @@ def consolidate_cart(cart)
 
   puts items, ""
 
-  items.map do |item|
-    item[:count] = 0
+  consolidated = {}
+  items.map do |name, info|
+    
   end
-  puts items
+
   puts cart
 
 end
