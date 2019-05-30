@@ -26,7 +26,6 @@ def apply_coupons(cart, coupons)
     cart[item] ? nil : break
 
     item_coupon = "#{item} W/COUPON"
-    info = cart[item]
 
     coupons_applied[item_coupon] ? nil : coupons_applied[item_coupon] = {}
     coupons_applied[item_coupon][:price] = coupon[:cost]
