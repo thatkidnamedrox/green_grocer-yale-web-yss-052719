@@ -13,7 +13,7 @@ def consolidate_cart(cart)
   # puts cart.inspect, "", new_cart.inspect
   # new_cart
 
-  puts items
+  puts items, ""
 
   items.map do |item|
     item[:count] = 0
