@@ -34,22 +34,28 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     item = coupon[:item]
     cart[item] ? nil : break
-    #puts cart[item][:count], coupon[:num]
-    cart[item][:count] >= coupon[:num] ? nil : break
+    
     item_coupon = "#{item} W/COUPON"
 
+    if cart[item][:count] >= coupon[:num]
+      coupons_applied[item_coupon] ||= {}
+      coupons_applied[item_coupon][:price] = coupon[:cost]
+      coupons_applied[item_coupon][:clearance] = cart[item][:clearance]
+      coupons_applied[item_coupon][:count] ? nil : coupons_applied[item_coupon][:count] = 0
+      coupons_applied[item_coupon][:count] += 1
 
-    coupons_applied[item_coupon] ||= {}
-    coupons_applied[item_coupon][:price] = coupon[:cost]
-    coupons_applied[item_coupon][:clearance] = cart[item][:clearance]
-    coupons_applied[item_coupon][:count] ? nil : coupons_applied[item_coupon][:count] = 0
-    coupons_applied[item_coupon][:count] += 1
-
-    coupons_applied[item] ||= {}
-    coupons_applied[item][:price] = cart[item][:price]
-    coupons_applied[item][:clearance] = cart[item][:clearance]
-    coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
-    coupons_applied[item][:count] -= coupon[:num]
+      coupons_applied[item] ||= {}
+      coupons_applied[item][:price] = cart[item][:price]
+      coupons_applied[item][:clearance] = cart[item][:clearance]
+      coupons_applied[item][:count] ? nil : coupons_applied[item][:count] = cart[item][:count]
+      coupons_applied[item][:count] -= coupon[:num]
+    else
+      coupons_applied[item] ||= {}
+      coupons_applied[item][:price] = cart[item][:price]
+      coupons_applied[item][:clearance] = cart[item][:clearance]
+      coupons_applied[item][:count] = cart[item][:count]
+    end
+    
   end
 
   coupons_applied == {} ? cart : coupons_applied
