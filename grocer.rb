@@ -19,6 +19,7 @@ def consolidate_cart(cart)
     item[:count] = 0
   end
   puts items
+  puts cart
 
 end
 
